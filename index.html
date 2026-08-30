@@ -58,16 +58,20 @@
             font-weight: 400;
             font-size: 22px;
             line-height: 1.7;
-            color: #1f1f1f;
-            background: #f9f6f0;
-            
+            color: black;
+            background-color: #fcf9f7;
+            background-image: url(hw.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            transition: background 0.3s, color 0.3s;            
         }
         /*заголовки*/
         h1 {
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
             font-size: 36px;
-            color: black;
             margin-top: 50px;
             margin-bottom: 16px;
         }
@@ -101,6 +105,20 @@
             width: 100%;
             height: auto;
             display: block;
+        }
+        .theme-img img {
+            pointer-events: none;
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* ===== ПО УМОЛЧАНИЮ (светлая) ===== */
+        .light-img {
+            display: block;
+        }
+        .dark-img {
+            display: none;
         }
         .center{
             text-align: center;
@@ -158,6 +176,19 @@
 
         .social-btn.vk:hover { background: #4a76a8; }
         .social-btn.instagram:hover { background: #e4405f; }
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #1a1a1a;
+                background-image: url(hb.png);
+                color: #e0e0e0;
+            }
+            .light-img {
+                display: none;
+            }
+            .dark-img {
+                display: block;
+            }
+        }
         @media (max-width: 768px) {
             .two-columns {
                 flex-direction: column;
@@ -183,9 +214,12 @@
                 padding: 6px 14px;
             }
             .hero {
-                background-size: contain;
-                background-position: top center;
-                height: 30vh;
+                background-size: cover;
+                background-position: center;
+                width: 100%;
+                height: 50vh;
+                margin: 0;
+                padding: 0;
             }
             .up {
                 bottom: 20px;
@@ -197,6 +231,15 @@
             }
             body {
                 padding-top: 80px;
+                background-size: cover;
+                background-position: center;
+            }
+            .img img {
+                width: 100%;
+                height: auto;
+                display: block;
+                margin: 0;
+                padding: 0;
             }
             .social-btn {
                 width: 44px;
@@ -245,8 +288,11 @@
 
     <!--услуги и цены-->
     <h1 class="center" id="services">Услуги и цены</h1>
-    <div class="img">
+    <div class="theme-img light-img">
         <img src="uslugi1.png" alt="">
+    </div>
+    <div class="theme-img dark-img">
+        <img src="uslugi-black.png" alt="">
     </div>
     <hr>
     <!--контакты-->
